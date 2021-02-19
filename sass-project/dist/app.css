@@ -1,3 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .container {
-  width: 100vh;
+  width: 100%;
+  height: 100%;
+}
+
+.container header, .container footer {
+  height: 150px;
+  background-color: red;
+}
+.container main {
+  height: calc(100vh - 300px);
+  background-color: yellow;
+}
+.container main .sinistra, .container main .centro, .container main .destra {
+  float: left;
+  height: 100px;
+}
+.container main .sinistra, .container main .destra {
+  width: 25%;
+  background-color: lightblue;
+}
+.container main .centro {
+  width: 50%;
+  background-color: orange;
 }

@@ -1,3 +1,52 @@
-.container{
-  width: 100vh;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+.container{
+  width: 100%;
+  height: 100%;
+}
+
+$primo_colore: red;
+$secondo_colore: orange;
+$terzo_colore: lightblue;
+$altezza_header_footer: 150px;
+
+
+
+
+// REGOLE GENERALI
+
+.container{
+  header, footer{
+    height: $altezza_header_footer;
+    background-color: $primo_colore;
+  }
+
+  main{
+    height: calc(100vh - #{$altezza_header_footer * 2});
+    background-color: yellow;
+    .sinistra, .centro, .destra{
+      float: left;
+      height: 100px;
+    }
+    .sinistra, .destra{
+      width: 25%;
+      background-color: $terzo_colore;
+
+    }
+    .centro{
+      width: 50%;
+      background-color: $secondo_colore;
+    }
+  }
+}
+
+
+
+
+
+
+//
