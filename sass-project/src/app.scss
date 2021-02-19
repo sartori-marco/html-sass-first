@@ -4,17 +4,19 @@
   box-sizing: border-box;
 }
 
-.container{
-  width: 100%;
-  height: 100%;
-}
 
 $primo_colore: red;
 $secondo_colore: orange;
 $terzo_colore: lightblue;
 $altezza_header_footer: 150px;
+$colore_destra_sinistra_txt: $primo_colore;
 
 
+@mixin clearFix {
+  content:'';
+  display: table;
+  clear: both;
+}
 
 
 // REGOLE GENERALI
@@ -23,25 +25,40 @@ $altezza_header_footer: 150px;
   header, footer{
     height: $altezza_header_footer;
     background-color: $primo_colore;
+    p{
+      text-align: center;
+      padding-top: 50px;
+    }
   }
 
   main{
     height: calc(100vh - #{$altezza_header_footer * 2});
-    background-color: yellow;
     .sinistra, .centro, .destra{
       float: left;
-      height: 100px;
+      height: calc(100vh - #{$altezza_header_footer * 2});
     }
     .sinistra, .destra{
       width: 25%;
       background-color: $terzo_colore;
+      p{
+        color: $colore_destra_sinistra_txt;
+      }
 
     }
     .centro{
       width: 50%;
       background-color: $secondo_colore;
     }
+    p{
+      text-align: center;
+      padding-top: 300px;
+    }
+
+    &:after{
+      @include clearFix;
+    }
   }
+
 }
 
 

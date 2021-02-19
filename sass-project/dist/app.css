@@ -4,28 +4,38 @@
   box-sizing: border-box;
 }
 
-.container {
-  width: 100%;
-  height: 100%;
-}
-
 .container header, .container footer {
   height: 150px;
   background-color: red;
 }
+.container header p, .container footer p {
+  text-align: center;
+  padding-top: 50px;
+}
 .container main {
   height: calc(100vh - 300px);
-  background-color: yellow;
 }
 .container main .sinistra, .container main .centro, .container main .destra {
   float: left;
-  height: 100px;
+  height: calc(100vh - 300px);
 }
 .container main .sinistra, .container main .destra {
   width: 25%;
   background-color: lightblue;
 }
+.container main .sinistra p, .container main .destra p {
+  color: red;
+}
 .container main .centro {
   width: 50%;
   background-color: orange;
+}
+.container main p {
+  text-align: center;
+  padding-top: 300px;
+}
+.container main:after {
+  content: "";
+  display: table;
+  clear: both;
 }
